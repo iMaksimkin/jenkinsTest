@@ -8,9 +8,9 @@ pipeline {
             stage('test'){
 
             steps {
-		    cmd "echo TEST"
-	            cmd "javac HelloWorld.java"
-	            cmd "java HelloWorld"
+		    bat "echo TEST"
+	            bat "javac HelloWorld.java"
+	            bat "java HelloWorld"
             }
         }
     }
