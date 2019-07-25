@@ -24,7 +24,7 @@ pipeline {
                                 //  bat 'cd src\\main\\java'
                                 bat 'javac jenkinsTest\\src\\main\\java\\HelloWorld.java'
                                 echo 'we r here'
-                                bat 'java jenkinsTest\\src\\main\\java\\HelloWorld'
+                                bat 'java jenkinsTest\\src\\main\\java\\HelloWorld.class'
                             }
                     }
                 }
