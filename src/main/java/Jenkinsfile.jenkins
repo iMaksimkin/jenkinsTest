@@ -1,16 +1,18 @@
 #!groovy
 pipeline {
-
-
-
-      agent { label 'master'}
+    agent { label 'master'}
     stages {
-            stage('test'){
-
+        stage('Initialize') {
             steps {
-		    bat "echo TEST"
-	            bat "javac HelloWorld.java"
-	            bat "java HelloWorld"
+                echo 'This is initialized step'
+            }
+        }
+        stage('Build') {
+            steps {
+                bat 'git clone https://github.com/iMaksimkin/jenkinsTest.git'
+                bat 'cd HelloWorld'
+                bat 'javac HelloWorld.java'
+                bat 'java HelloWorld'
             }
         }
     }
