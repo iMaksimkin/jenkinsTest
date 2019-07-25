@@ -27,7 +27,7 @@ pipeline {
                                 echo 'we r here'
                                 bat 'cd src\\main\\java'
                                 echo 'we r in java'
-                                bat 'java HelloWorld.class'
+                                bat 'java HelloWorld'
                               //  bat 'java HelloWorld.class'
                             }
                     }
