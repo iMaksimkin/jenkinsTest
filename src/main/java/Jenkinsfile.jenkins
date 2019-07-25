@@ -1,6 +1,6 @@
 #!groovy
 pipeline {
-    agent { label 'master'}
+    agent { label 'master' }
     stages {
         stage('Initialize') {
             steps {
@@ -11,17 +11,19 @@ pipeline {
             steps {
                 bat 'git clone https://github.com/iMaksimkin/jenkinsTest.git'
 
-            }}
-
-                stage('Build')
-                        {
-                steps{
-                WORKSPACE="${WORKSPACE}/src/main/java"
-                // dir    ('src\main\java') {
-              //  bat 'cd src\\main\\java'
-                bat 'javac HelloWorld.java'
-                bat 'java HelloWorld'
             }
         }
+
+        stage('Build')
+                {
+                    environment {WORKSPACE = "${WORKSPACE}/src/main/java"}
+                        steps {
+                      bat  'cd env.Workspace'
+                        // dir    ('src\main\java') {
+                        //  bat 'cd src\\main\\java'
+                        bat 'javac HelloWorld.java'
+                        bat 'java HelloWorld'
+                    }
+                }
     }
 }
