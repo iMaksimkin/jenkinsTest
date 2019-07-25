@@ -18,7 +18,7 @@ pipeline {
                 {
                     environment {WORKSPACE = "${WORKSPACE}/src/main/java"}
                         steps {
-                      bat  "cd env.WORKSPACE"
+                      bat  '${WORKSPACE}/src/main/java'
                         // dir    ('src\main\java') {
                         //  bat 'cd src\\main\\java'
                         bat 'javac HelloWorld.java'
