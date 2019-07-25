@@ -19,10 +19,10 @@ pipeline {
                     environment {WORKSPACE = "${WORKSPACE}/src/main/java"}
                         steps {
                             script {
-                                bat 'cd jenkinsTest\\src\\main\\java'
+                              //  bat 'cd jenkinsTest\\src\\main\\java'
                                 // dir    ('src\main\java') {
                                 //  bat 'cd src\\main\\java'
-                                bat 'javac HelloWorld.java'
+                                bat 'javac jenkinsTest\\src\\main\\java\\HelloWorld.java'
                                 bat 'java HelloWorld'
                             }
                     }
