@@ -8,7 +8,7 @@ pipeline {
             agent { label 'master'}
             steps {
 		    sh "echo TEST"
-	            sh "javac HelloWorld.java"
+	            sh "javac /src/main/java/HelloWorld.java"
 	            sh "java HelloWorld"
             }
         }
