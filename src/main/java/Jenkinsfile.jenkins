@@ -23,7 +23,6 @@ pipeline {
                              bat    'dir src\\main\\java'
                                 //  bat 'cd src\\main\\java'
                                 bat 'chdir src\\main\\java && javac HelloWorld.java && java HelloWorld'
-                                slackSend color: 'good', message: 'Message from Jenkins Pipeline'
 
 //                                echo 'we r here'
 //                                bat 'cd src\\main\\java'
@@ -31,7 +30,9 @@ pipeline {
 //                                bat 'java HelloWorld'
                               //  bat 'java HelloWorld.class'
                             }
+                            slackSend color: 'good', message: 'Message from Jenkins Pipeline'
                     }
+
                 }
     }
 }
