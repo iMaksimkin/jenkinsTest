@@ -7,12 +7,12 @@ pipeline {
                 echo 'This is initialized step'
             }
         }
-        stage('Download') {
-            steps {
-                bat 'git clone https://github.com/iMaksimkin/jenkinsTest.git'
-
-            }
-        }
+//        stage('Download') {
+//            steps {
+//                bat 'git clone https://github.com/iMaksimkin/jenkinsTest.git'
+//
+//            }
+//        }
 
         stage('Build')
                 {
@@ -27,7 +27,7 @@ pipeline {
                                 echo 'we r here'
                                 but 'cd src\\main\\java'
                                 echo 'we r in java'
-                                bat 'java HelloWorld.class'
+                                but 'java HelloWorld.class'
                               //  bat 'java HelloWorld.class'
                             }
                     }
