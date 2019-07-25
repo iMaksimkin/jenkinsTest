@@ -20,11 +20,11 @@ pipeline {
                         steps {
                             script {
                               //  bat 'cd jenkinsTest\\src\\main\\java'
-                                // dir    ('src\main\java') {
+                             bat    'dir src\\main\\java'
                                 //  bat 'cd src\\main\\java'
-                                bat 'javac jenkinsTest\\src\\main\\java\\HelloWorld.java'
+                                bat 'javac HelloWorld.java'
                                 echo 'we r here'
-                                bat 'java jenkinsTest\\src\\main\\java\\HelloWorld.class'
+                                bat 'java HelloWorld.class'
                             }
                     }
                 }
