@@ -22,12 +22,12 @@ pipeline {
                               //  bat 'cd jenkinsTest\\src\\main\\java'
                              bat    'dir src\\main\\java'
                                 //  bat 'cd src\\main\\java'
-                                bat 'chdir src\\main\\java && javac HelloWorld.java'
+                                bat 'chdir src\\main\\java && javac HelloWorld.java && java HelloWorld'
 
-                                echo 'we r here'
-                                bat 'cd src\\main\\java'
-                                echo 'we r in java'
-                                bat 'java HelloWorld'
+//                                echo 'we r here'
+//                                bat 'cd src\\main\\java'
+//                                echo 'we r in java'
+//                                bat 'java HelloWorld'
                               //  bat 'java HelloWorld.class'
                             }
                     }
