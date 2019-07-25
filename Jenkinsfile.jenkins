@@ -1,16 +1,12 @@
 #!groovy
 pipeline {
 
-    agent none
-    stages {
+    node('tester') {
+        final String gitBase = 'Hello World'
 
-        stage('RUN MASTER'){
-            agent { label 'master'}
-            steps {
-		    sh "echo TEST"
-	            sh "javac HelloWorld.java"
-	            sh "java HelloWorld"
-            }
+        stage('source') {
+            git 'https://github.com/AidanWZ/JenkinsJava.git'
         }
-    }
-}
+        stage('build') {
+            sh 'HelloWorld'
+        }}}
