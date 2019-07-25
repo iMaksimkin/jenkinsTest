@@ -30,9 +30,10 @@ pipeline {
 //                                bat 'java HelloWorld'
                               //  bat 'java HelloWorld.class'
                             }
-                            slackSend color: 'good', message: 'Message from Jenkins Pipeline'
+
                     }
 
                 }
     }
+    slackSend color: 'good', message: 'Message from Jenkins Pipeline'
 }
