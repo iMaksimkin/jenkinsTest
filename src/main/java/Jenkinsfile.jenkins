@@ -11,7 +11,7 @@ pipeline {
             steps {
                 bat 'git clone https://github.com/iMaksimkin/jenkinsTest.git'
                 bat 'cd jenkinsTest'
-                bat 'javac HelloWorld.java'
+                bat 'javac \\src\\main\\java\\HelloWorld.java'
                 bat 'java HelloWorld'
             }
         }
