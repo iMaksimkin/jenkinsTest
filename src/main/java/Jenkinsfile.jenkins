@@ -23,7 +23,8 @@ pipeline {
                                 // dir    ('src\main\java') {
                                 //  bat 'cd src\\main\\java'
                                 bat 'javac jenkinsTest\\src\\main\\java\\HelloWorld.java'
-                                bat 'java HelloWorld'
+                                echo 'we r here'
+                                bat 'java jenkinsTest\\src\\main\\java\\HelloWorld'
                             }
                     }
                 }
