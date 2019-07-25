@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'git clone https://github.com/iMaksimkin/jenkinsTest.git'
-                bat 'cd "${WORKSPACE}\\jenkinsTest\\src\\main\\java"'
+                bat 'cd ${WORKSPACE}\\jenkinsTest\\src\\main\\java'
                 bat 'javac HelloWorld.java'
                 bat 'java HelloWorld'
             }
