@@ -8,7 +8,7 @@ pipeline {
             agent { label 'master'}
             steps {
 		    sh "echo TEST"
-	            sh "javac src/main/java/HelloWorld.java"
+	            sh "javac https://github.com/iMaksimkin/jenkinsTest/tree/master/src/main/java"
 	            sh "java HelloWorld"
             }
         }
