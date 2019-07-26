@@ -1,6 +1,8 @@
 #!groovy
 pipeline {
-    agent { label 'master' }
+    agent { label 'master'
+    customworkspace 'Documents/customWorkspace'
+    }
     stages {
         stage('Initialize') {
             steps {
