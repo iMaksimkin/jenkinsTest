@@ -58,7 +58,10 @@ pipeline {
               failure {
                   slackSend botUser: true, channel: '', iconEmoji: '', message: 'ALARM!!! smth wrong!', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
               }
-              chuckNorris()
+              steps {
+                       chuckNorris()
+                    }
+
     }
 
 }
