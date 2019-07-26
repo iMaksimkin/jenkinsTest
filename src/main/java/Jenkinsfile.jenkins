@@ -39,7 +39,7 @@ pipeline {
         stage ('Succes verifying')
                 {
                     steps {
-                        chuckNorris()
+                     sad   chuckNorris()
                     }
                 }
 
@@ -48,7 +48,7 @@ pipeline {
                   always {
                       slackSend botUser: true, channel: '', iconEmoji: '', message: 'this is post msg', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
                   }
-              filure {
+              failure {
                   slackSend botUser: true, channel: '', iconEmoji: '', message: 'ALARM!!! smth wrong!', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
               }
     }
