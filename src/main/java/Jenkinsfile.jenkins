@@ -40,7 +40,7 @@ pipeline {
             }
           post {
               always {
-                  slackSend botUser: true, channel: '', iconEmoji: '', message: 'this msg after each stage', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
+                  slackSend botUser: true, channel: '', iconEmoji: '', message: 'this is post msg', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
         }
     }
 
