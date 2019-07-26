@@ -8,18 +8,17 @@ pipeline {
     }
 
 
-
     stages {
 
-        stage ('Parallel stage')
-        {
+        stage('Parallel stage')
+                {
 
-            parallel {
-                stage('Initialize') {
-                    steps {
-                        echo 'This is initialized step'
-                    }
-                }
+                    parallel {
+                        stage('Initialize') {
+                            steps {
+                                echo 'This is initialized step'
+                            }
+                        }
 //        stage('Download') {
 //            steps {
 //                bat 'git clone https://github.com/iMaksimkin/jenkinsTest.git'
@@ -27,37 +26,40 @@ pipeline {
 //            }
 //        }
 
-                stage('Build')
-                        {
-                            environment { WORKSPACE = "${WORKSPACE}/src/main/java" }
-                            steps {
-                                script {
-                                    bat 'dir src\\main\\java'
-                                    bat 'chdir src\\main\\java && javac HelloWorld.java && java HelloWorld'
-                                    slackSend botUser: true, channel: '', iconEmoji: '', message: 'Job is DONE! Everything is OK!', color: '#1E90FF', tokenCredentialId: 'slack_token', username: ''
+                        stage('Build')
+                                {
+                                    environment { WORKSPACE = "${WORKSPACE}/src/main/java" }
+                                    steps {
+                                        script {
+                                            bat 'dir src\\main\\java'
+                                            bat 'chdir src\\main\\java && javac HelloWorld.java && java HelloWorld'
+                                            slackSend botUser: true, channel: '', iconEmoji: '', message: 'Job is DONE! Everything is OK!', color: '#1E90FF', tokenCredentialId: 'slack_token', username: ''
 //
+                                        }
+
+                                    }
                                 }
 
-                            }
-                        }
-
-            }}
-
-        stage ('Succes verifying')
-                {
-                    steps {
-                       chuckNorris()
                     }
                 }
 
+//        stage ('Succes verifying')
+//                {
+//                    steps {
+//                       chuckNorris()
+//                    }
+//                }
+//
+//            }
+        post {
+            always {
+                slackSend botUser: true, channel: '', iconEmoji: '', message: 'the job is over', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
             }
-          post {
-                  always {
-                      slackSend botUser: true, channel: '', iconEmoji: '', message: 'the job is over', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
-                  }
-              failure {
-                  slackSend botUser: true, channel: '', iconEmoji: '', message: 'ALARM!!! smth wrong!', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
-              }
-    }
+            failure {
+                slackSend botUser: true, channel: '', iconEmoji: '', message: 'ALARM!!! smth wrong!', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
+            }
+            chuckNorris()
+        }
 
+    }
 }
