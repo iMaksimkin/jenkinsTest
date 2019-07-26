@@ -3,9 +3,12 @@ pipeline {
     agent {
         node {
             label 'master'
-            customworkspace 'Documents/customWorkspace'
+            customWorkspace 'Documents/customWorkspace'
         }
     }
+
+
+
     stages {
         stage('Initialize') {
             steps {
