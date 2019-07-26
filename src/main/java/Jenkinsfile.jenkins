@@ -38,7 +38,9 @@ pipeline {
                 }
         stage ('Succes verifying')
                 {
-                    chuckNorris()
+                    steps {
+                        chuckNorris()
+                    }
                 }
 
             }
