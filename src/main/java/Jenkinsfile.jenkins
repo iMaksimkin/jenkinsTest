@@ -39,14 +39,14 @@ pipeline {
         stage ('Succes verifying')
                 {
                     steps {
-                     sad   chuckNorris()
+                       chuckNorris()
                     }
                 }
 
             }
           post {
                   always {
-                      slackSend botUser: true, channel: '', iconEmoji: '', message: 'this is post msg', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
+                      slackSend botUser: true, channel: '', iconEmoji: '', message: 'the job is over', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
                   }
               failure {
                   slackSend botUser: true, channel: '', iconEmoji: '', message: 'ALARM!!! smth wrong!', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
