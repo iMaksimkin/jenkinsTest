@@ -55,12 +55,11 @@ pipeline {
                   always {
                       slackSend botUser: true, channel: '', iconEmoji: '', message: 'the job is over', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
                   }
+              always { chuckNorris()}
               failure {
                   slackSend botUser: true, channel: '', iconEmoji: '', message: 'ALARM!!! smth wrong!', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
               }
-              always{
-                       chuckNorris()
-                    }
+
 
     }
 
