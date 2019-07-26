@@ -11,8 +11,8 @@ pipeline {
 
     stages {
 
-        stage 'Parallel stage'
-
+        stage ('Parallel stage')
+        {
 
             parallel {
                 stage('Initialize') {
@@ -41,7 +41,7 @@ pipeline {
                             }
                         }
 
-            }
+            }}
 
         stage ('Succes verifying')
                 {
