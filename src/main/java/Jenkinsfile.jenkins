@@ -50,6 +50,7 @@ pipeline {
                   always {
                       slackSend botUser: true, channel: '', iconEmoji: '', message: 'the job is over', color: '#ff1ea1', tokenCredentialId: 'slack_token', username: ''
                       chuckNorris()
+                      cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
                   }
 
               failure {
